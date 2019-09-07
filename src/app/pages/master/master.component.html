@@ -1,0 +1,27 @@
+<nav class="uk-navbar-container" uk-navbar *ngIf="userLogged">
+    <div class="uk-navbar-left">
+      <ul class="uk-navbar-nav">
+        <li class="uk-active">            
+          <a href="" uk-toggle="target: #offcanvas-push">
+            MENU
+          </a>
+        </li>
+        <li><a href="" (click)="logout()">LOGOUT</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- This is the off-canvas -->
+  <div id="offcanvas-push" uk-offcanvas="mode: push; overlay: true">
+    <div class="uk-offcanvas-bar">
+      <button class="uk-offcanvas-close" type="button" uk-close></button>
+      <a href="" routerLink="/product-list" routerLinkActive="selected" >
+        <h3>Produtos</h3>
+      </a>
+    </div>
+  </div>
+
+  <div class="uk-padding">
+    <router-outlet></router-outlet>
+  </div>
+  

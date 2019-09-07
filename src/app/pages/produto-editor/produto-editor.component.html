@@ -1,0 +1,54 @@
+<div class="uk-card uk-card-default uk-card-body">
+  <h3 class="uk-card-title">Cadastrar Produto</h3>
+
+  <form [formGroup]="form">
+
+    <div class="uk-margin">
+      <input mask="A#-###" type="text" class="uk-input uk-form-large" placeholder="Código" formControlName="id"
+        [ngClass]="{'uk-form-danger': (!form.controls.id.valid && !form.controls.id.pristine)}">
+      <span class="uk-text-danger" *ngIf="form.controls.id.invalid && !form.controls.id.pristine">
+        Código inválido!
+      </span>
+    </div>
+    <div class="uk-margin">
+      <input type="text" class="uk-input uk-form-large" placeholder="Título" formControlName="title"
+        [ngClass]="{'uk-form-danger': (!form.controls.title.valid && !form.controls.title.pristine)}">
+      <span class="uk-text-danger" *ngIf="form.controls.title.invalid && !form.controls.title.pristine">
+        Título inválido!
+      </span>
+    </div>
+    <div class="uk-margin">
+      <input type="text" class="uk-input uk-form-large" placeholder="Preço" formControlName="price"
+        [ngClass]="{'uk-form-danger': (!form.controls.price.valid && !form.controls.price.pristine)}">
+      <span class="uk-text-danger" *ngIf="form.controls.price.invalid && !form.controls.price.pristine">
+        Preço inválido!
+      </span>
+    </div>
+
+    <div class="uk-margin">
+      <input type="text" class="uk-input uk-form-large" placeholder="Descrição" formControlName="description"
+        [ngClass]="{'uk-form-danger': (!form.controls.description.valid && !form.controls.description.pristine)}">
+      <span class="uk-text-danger" *ngIf="form.controls.description.invalid && !form.controls.description.pristine">
+        Descrição inválida!
+      </span>
+    </div>
+    <div class="uk-margin">
+      <input type="text" class="uk-input uk-form-large" placeholder="Quantidade" formControlName="amount"
+        [ngClass]="{'uk-form-danger': (!form.controls.amount.valid && !form.controls.amount.pristine)}">
+      <span class="uk-text-danger" *ngIf="form.controls.amount.invalid && !form.controls.amount.pristine">
+        Quantidade inválida!
+      </span>
+    </div>
+    <div class="uk-margin">
+      <select class="uk-select uk-form-large" formControlName="category">
+        <option value="{{ item.id }}" *ngFor="let item of categories"> {{ item.description }} </option>
+      </select>
+    </div>
+  </form>
+
+  <div class="uk-margin uk-text-right">
+    <button class="uk-button uk-button-danger" [disabled]="form.invalid || !userIsManager"
+      (click)="delete()">Deletar</button>
+    <button class="uk-button uk-button-default" [disabled]="form.invalid" (click)="save()">Salvar</button>
+  </div>
+</div>
