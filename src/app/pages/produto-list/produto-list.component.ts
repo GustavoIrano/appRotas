@@ -29,7 +29,7 @@ export class ProdutoListComponent implements OnInit {
           this.products = res.data;
         },
         (err) => {
-          alert('Erro ao recuperar a lista de produtos!')
+          alert('Erro ao recuperar a lista de produtos!');
         }
       );
   }
