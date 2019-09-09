@@ -55,7 +55,10 @@ export class ProdutoEditorComponent implements OnInit {
         (res: Result) => {
           alert(res.message);
         },
-        (err) => { }
+        (err) => {
+          let tOperation = isNew ? "cadastrar" : "alterar";
+          alert("Não foi possível " + tOperation + " o produto!");
+        }
       );
   }
 
@@ -65,7 +68,9 @@ export class ProdutoEditorComponent implements OnInit {
         (res: Result) => {
           alert(res.message);
         },
-        (err) => { }
+        (err) => {
+          alert("Não foi possível deletar o produto!");
+        }
       );
   }
 

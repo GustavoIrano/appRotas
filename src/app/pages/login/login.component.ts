@@ -33,7 +33,6 @@ export class LoginComponent implements OnInit {
       .subscribe(
         (res: User) => {
           UserUtil.save(res);
-          console.log(UserUtil.get());
           this.route.navigate(['']);
         }
       );
