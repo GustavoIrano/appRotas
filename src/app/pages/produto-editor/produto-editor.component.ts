@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { ProductService } from 'src/app/services/product.service';
 import { CategoryService } from 'src/app/services/category.service';
-import { CustomValidator } from 'src/app/validators/custom.validator';
 import { Category } from 'src/app/models/category.model';
 import { Product } from 'src/app/models/product.model';
 import { Result } from 'src/app/models/Result.model';
@@ -66,9 +65,7 @@ export class ProdutoEditorComponent implements OnInit {
         (res: Result) => {
           alert(res.message);
         },
-        (err) => {
-
-        }
+        (err) => { }
       );
   }
 

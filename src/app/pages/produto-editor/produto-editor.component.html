@@ -1,5 +1,6 @@
 <div class="uk-card uk-card-default uk-card-body">
-  <h3 class="uk-card-title">Cadastrar Produto</h3>
+  <h3 class="uk-card-title" *ngIf="product.id">Editar Produto</h3>
+  <h3 class="uk-card-title" *ngIf="!product.id">Cadastrar Produto</h3>
 
   <form [formGroup]="form">
 
