@@ -34,7 +34,7 @@ export class ProdutoEditorComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userIsManager = UserUtil.userIsManager();
+    this.userIsManager = UserUtil.isInRole("manager");
     this.getCategories();
   }
 

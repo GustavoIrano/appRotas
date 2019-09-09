@@ -21,7 +21,7 @@ export class ProdutoListComponent implements OnInit {
 
   ngOnInit() {
 
-    this.userIsManager = UserUtil.userIsManager();
+    this.userIsManager = UserUtil.isInRole("manager");
 
     this.service.getProducts()
       .subscribe(

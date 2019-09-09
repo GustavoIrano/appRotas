@@ -29,14 +29,4 @@ export class UserUtil {
         return user.roles.includes(role);
     }
 
-    public static userIsManager() {
-        let userRoles = this.get()['roles'];
-
-        for (let i = 0; i < userRoles.length; i++) {
-            if (userRoles[i] === 'manager') {
-                return true;
-            }
-        }
-        return false;
-    }
 }
